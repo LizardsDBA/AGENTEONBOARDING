@@ -1,4 +1,4 @@
-# CLAUDE.md — Build Spec: GitHub Onboarding Agent
+#  — Build Spec: GitHub Onboarding Agent
 
 > **Como usar:** salve este arquivo como `CLAUDE.md` na raiz do repositório vazio e coloque
 > `ESTRUTURA-PROJETO-AGENTE-ONBOARDING.md` na pasta `docs/`. Abra o Claude Code na raiz e diga:
