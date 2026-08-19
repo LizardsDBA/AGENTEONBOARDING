@@ -1,13 +1,3 @@
-#  — Build Spec: GitHub Onboarding Agent
-
-> **Como usar:** salve este arquivo como `CLAUDE.md` na raiz do repositório vazio e coloque
-> `ESTRUTURA-PROJETO-AGENTE-ONBOARDING.md` na pasta `docs/`. Abra o Claude Code na raiz e diga:
-> **"Leia CLAUDE.md e execute a FASE 0."**
-> Depois avance uma fase por vez: *"execute a FASE 1"*, e assim por diante.
-> **Nunca peça "construa o projeto inteiro"** — o agente pula os checkpoints e você perde o controle
-> da arquitetura, que é justamente o que está sendo avaliado.
-
----
 
 ## 0. Contexto imutável
 
