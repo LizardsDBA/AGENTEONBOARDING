@@ -20,22 +20,6 @@ operações Git reais, observa o resultado e adapta o próximo passo.
 
 ---
 
-## 1. Regras que o agente NÃO pode quebrar
-
-1. **Uma fase por vez.** Ao terminar uma fase, PARE, resuma o que fez e aguarde aprovação.
-2. **Não crie classe que não esteja na árvore de arquivos deste documento.** Se achar que falta algo, pergunte.
-3. **Proibido `enum` + `switch` para estado.** State é polimórfico: cada estado é uma classe que devolve o próximo.
-4. **Proibido `AgentCommand` que só chame o LLM.** Todo Command delega a um Receiver real (`GitClient`, `GitHubClient`, `KnowledgeService`).
-5. **Proibido usar `ApplicationEventPublisher` do Spring como Observer.** Implemente `AgentEventPublisher` próprio — o padrão precisa aparecer na UML.
-6. **Proibido uma Strategy instanciar ou chamar outra.** Ela só devolve `StepDecision.ESCALATE`; quem troca é o `StrategySelector`.
-7. **Nunca duas estratégias ativas ao mesmo tempo.** `StrategySelector` guarda uma única referência `active`.
-8. **Não adicione dependências** além das listadas na FASE 0. Sem Lombok, sem MapStruct, sem libs de IA fora o Spring AI.
-9. **Sem GUI antes da FASE 6.** Sem Observer antes da FASE 5.
-10. **Português nos comentários e nas mensagens ao usuário. Inglês nos nomes de classe e método.**
-11. Ao final de cada fase, rode `mvn -q compile` e garanta build limpo.
-
----
-
 ## 2. Ambiente (o aluno prepara, o agente só valida)
 
 LLM local via **llama.cpp** (não Ollama — instável no momento), modelo pequeno aberto:
@@ -299,15 +283,3 @@ Gerar em `docs/`:
 - `README.md` — tabela de rastreabilidade padrão → papel GoF → classe
 
 ---
-
-## 3. Checklist final (o que o professor vai perguntar)
-
-- [ ] Os 5 padrões estão no **mesmo fluxo de execução**, não em módulos isolados
-- [ ] Consigo apontar, no código, a classe exata de cada papel GoF
-- [ ] O State é polimórfico — não existe `switch` de estado
-- [ ] Todo Command tem um Receiver real
-- [ ] O `AgentEventPublisher` é nosso, não do Spring
-- [ ] As 3 strategies têm comportamento genuinamente diferente
-- [ ] A troca ReAct → HITL acontece em runtime, com **uma** estratégia ativa por vez, disparada por gatilho mensurável
-- [ ] O modelo é aberto e roda local
-- [ ] A UML bate com o código
