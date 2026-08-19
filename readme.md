@@ -1,9 +1,6 @@
 
 ## 0. Contexto imutável
 
-Projeto acadêmico de **Padrões de Projeto**. O código é meio; **a nota está na arquitetura**.
-Documento de arquitetura completo: `docs/ESTRUTURA-PROJETO-AGENTE-ONBOARDING.md` — leia antes de codar.
-
 **Tema:** *GitHub Onboarding Agent* — Customer Service Agent for Developer Onboarding.
 Um agente que acompanha um desenvolvedor aprendendo Git/GitHub: ensina, planeja, executa
 operações Git reais, observa o resultado e adapta o próximo passo.
